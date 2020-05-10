@@ -1,24 +1,19 @@
-const base_url = "https://api.jikan.moe/v3";
-const end_point = "https://api.jikan.moe/v3/top/"
+function loadContent(){
+    var url = "https://api.jikan.moe/v3/top/anime/1/upcoming";
+    fetch(url).then(response => response.json())
+        .then(function(data){
+            var template = data.map(post => {
+                return `
+                <h3>${post.title}</h3>
+                <p>${post.body}</p>
+                <hr>
+                `;
+            });
 
-
-function requestTopAnime(url, onComplete, onError) {
-
-    const form = new FormData(this);
-
-    fetch(`${base_url}/top/anime?q=favorite`)
-        .then((res) => res.json())
-        .then(updateDom)
-        .catch(err=>console.warn(err.message));
-}
-
-function generateAnimeUrl(path) {
-    const url = `${MOVIE_DB_ENDPOINT}anime?q=favorite`;
-    return url;
-}
-function getTopRatedMovies() {
-    const url = generateAnimeUrl;
-    requestTopAnime(url, render, handleGeneralError);
+            document.getElementById("hasil").innerHTML = template.join('<br>');
+        }).catch(function(e){
+            alert("gagal mengambil data");
+        });
 }
 
 
