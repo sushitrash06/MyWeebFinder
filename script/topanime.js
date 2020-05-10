@@ -4,8 +4,8 @@ function TopAnime(url, onComplete, onError){
 
     fetch(`${top_url}/top/anime?q/favorite`)
     .then(res=>res.json())
-    .then(updateDom)
-    .catch(err=>console.warn(err.message));
+    .then(onComplete)
+    .catch(onError);
 }
 
 const renderResult = results => {
@@ -13,9 +13,9 @@ const renderResult = results => {
     results.forEach(top => {
         const { title, image_url, rating } = top;
         const topElement = document.createElement("div");
-        clubElement.setAttribute("class", "top");
+        topElement.setAttribute("class", "top");
 
-    clubElement.innerHTML =
+    topElement.innerHTML =
  
     `<div class="card">
                         <div class="card-image">
@@ -31,12 +31,12 @@ const renderResult = results => {
                     </div>
                 `
     ;
-clubListElement.appendChild(clubElement);
+topListElement.appendChild(topElement);
     })
 };
 
 function getTopAnime() {
     const url = `${top_url}/top/anime/1/favorite`
     const render = renderResult.bind({ title: 'Recomendation' })
-    TopAnime(url, render, handleGeneralError);
+    TopAnime(url, onComplete, onError);
 }

@@ -63,5 +63,4 @@ function pageLoaded(){
     const form = document.getElementById('search_form');
     form.addEventListener("submit", searchAnime);
 }
-getTopAnime();
 window.addEventListener("load", pageLoaded);
