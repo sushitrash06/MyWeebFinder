@@ -18,7 +18,6 @@ function generateAnimeUrl(path) {
 }
 function getTopRatedMovies() {
     const url = generateAnimeUrl;
-    const render = renderMovies.bind({ title: 'Top Rated Movies' })
     requestTopAnime(url, render, handleGeneralError);
 }
 
