@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Anime for weebs</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="bootsrap/css/bootstrap.css">
+    <link rel="stylesheet"  media="screen" href="style/style.css" />
+</head> 
+<body>
+    <header>
+            <h4>World Of Weebs</h4>
+            <nav class="navbar">
+    
+                           <li class="li1"><a href="#cari">Search Anime</a></li>
+                           <li class="li2"><a href="#recomended">Recomendation</a></li>
+                           <li class="li3"><a href="#contact">About Us</a></li>
+                
+                    </nav>
+                </header>
+    <section id ="home" class="banner-area">
+        <div class="banner-img"></div>
+        <h1>World Of Weebs</h1>
+        <h2>Wibu bau bawang</h2>
+        <a href="#cari" class="banner-btn">Search</a>
+    </section>
+    <section>
+    <p id = "cari"style="font-family: monospace; font-size: 35px;"> Search Anime !! </p>
+</section>
+<div>
+    <form id="search_form" class="col s12">
+        <input placeholder="Placeholder" name="search" id="search" type="text" class="validate" style="font-family: Arial, Helvetica, sans-serif;">
+        <button type="reset" class="search" id="search-btn"></button>
+        <script>
+            const input = document.getElementById("search");
+            const searchBtn = document.getElementById("search-btn");
+
+            const expand = () => {
+            searchBtn.classList.toggle("close");
+            input.classList.toggle("square");
+            };
+            searchBtn.addEventListener("click",expand);
+            </script>
+      </form>
+
+        </div>
+    </div>
+</div>
+
+<div id="search-results" class="container">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script/anime.js"></script>
+</body>
+</html>
